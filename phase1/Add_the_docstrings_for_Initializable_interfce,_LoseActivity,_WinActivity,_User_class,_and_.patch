@@ -1,0 +1,265 @@
+Index: phase1/app/src/main/java/com/example/phase1/UserManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- phase1/app/src/main/java/com/example/phase1/UserManager.java	(revision c3d6505a93a1cac71cdb3e234c4bf6e8198bca22)
++++ phase1/app/src/main/java/com/example/phase1/UserManager.java	(date 1572590845000)
+@@ -6,30 +6,57 @@
+ /*
+  * Based on Singleton Design Pattern. https://www.geeksforgeeks.org/singleton-design-pattern/
+  */
++
++/**
++ * A user manager, manage all the users.
++ */
+ public class UserManager implements Serializable {
++    /** A static user manager. */
+     private static UserManager userManager = null;
+ 
+-    // The list that stores all the users
++    /** The list that stores all the users. */
+     private HashMap<String, User> users;
+ 
++    /** Current user. */
+     private User curUser = null;
+ 
++    /** Constructs a new user manager. */
+     private UserManager(){
+ 
+     }
+ 
++    /**
++     * Get the current user.
++     * @return current user.
++     */
+     public User getCurUser(){return curUser;}
++
++    /**
++     * Set specific user to current user.
++     * @param curUser the given user.
++     */
+     public void setCurUser(User curUser){this.curUser = curUser;}
+ 
++    /**
++     * Set specific user.
++     * @param users the given users.
++     */
+     public void setUsers(HashMap<String, User> users){
+         this.users = users;
+     }
+ 
++    /**
++     * Get the users.
++     * @return the users.
++     */
+     public HashMap<String, User> getUsers(){
+         return users;
+     }
+ 
+-    // Get the only instance in this class.
++    /**
++     * Get the only instance in this class.
++     * @return the instance.
++     */
+     public static UserManager getInstance(){
+         if(userManager == null){
+             userManager = new UserManager();
+@@ -37,7 +64,10 @@
+         return userManager;
+     }
+ 
+-    // Add a user in users
++    /**
++     * Add a specific user in users.
++     * @param user the given user.
++     */
+     public void addUser(User user){
+         users.put(user.getUsername(), user);
+     }
+Index: phase1/app/src/main/java/com/example/phase1/LoseActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- phase1/app/src/main/java/com/example/phase1/LoseActivity.java	(revision c3d6505a93a1cac71cdb3e234c4bf6e8198bca22)
++++ phase1/app/src/main/java/com/example/phase1/LoseActivity.java	(date 1572590311000)
+@@ -5,6 +5,7 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++/** Jump to this activity if the player lose the game. */
+ public class LoseActivity extends AppCompatActivity implements Initializable{
+     Phase1App app;
+     FileSystem fileSystem;
+Index: phase1/app/src/main/java/com/example/phase1/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- phase1/app/src/main/java/com/example/phase1/User.java	(revision c3d6505a93a1cac71cdb3e234c4bf6e8198bca22)
++++ phase1/app/src/main/java/com/example/phase1/User.java	(date 1572589986000)
+@@ -3,19 +3,23 @@
+ import java.io.Serializable;
+ import java.util.HashMap;
+ 
++/**
++ * A user.
++ */
+ public class User implements Serializable {
+ 
+-    // username of the User
++    /** username of the User. */
+     private String username;
+-    // password of the User
++    /** password of the User. */
+     private String password;
+-    // Current player for this user.
++    /** Current player for this user. */
+     private Player curPlayer;
+-    // max number of players for a user.
++    /** Max number of players for a user.*/
+     private int playersNumberLimit;
+-    // Players this user have
++    /** Players this user have. */
+     private HashMap<String, Player> players;
+ 
++    /** Constructs a new user with given username, password and player's number limit. */
+     public User(String username, String password, int playersNumberLimit){
+         setUsername(username);
+         setPassword(password);
+@@ -24,41 +28,93 @@
+         curPlayer = null;
+     }
+ 
++    /**
++     *  Set the limit of the number of players that a user could build.
++     * @param playersNumberLimit the limit of the number of playrs a user could build.
++     */
+     public void setPlayersNumberLimit(int playersNumberLimit) {
+         this.playersNumberLimit = playersNumberLimit;
+     }
++
++    /**
++     * Get the limit number.
++     * @return the limit number.
++     */
+     public int getPlayersNumberLimit() {
+         return playersNumberLimit;
+     }
+ 
++    /**
++     * Get the user's name.
++     * @return the user name.
++     */
+     public String getUsername() {
+         return username;
+     }
++
++    /**
++     * Set the user name to a specific name.
++     * @param username the given username.
++     */
+     public void setUsername(String username) {
+         this.username = username;
+     }
+ 
++    /**
++     * Get the user's password.
++     * @return the user's password.
++     */
+     public String getPassword() {
+         return password;
+     }
++
++    /**
++     * Set the user's password to a specific password.
++     * @param password the given username.
++     */
+     public void setPassword(String password) {
+         this.password = password;
+     }
+ 
++    /**
++     * Set the current player to a specific player.
++     * @param curPlayer a player.
++     */
+     public void setCurPlayer(Player curPlayer){
+         this.curPlayer = curPlayer;
+     }
++
++    /**
++     * Get the current player.
++     * @return the current player.
++     */
+     public Player getCurPlayer(){
+         return this.curPlayer;
+     }
+ 
++    /**
++     * Get the hash map that stores the players.
++     * @return all the players.
++     */
+     public HashMap<String, Player> getPlayers() {
+         return players;
+     }
++
++    /**
++     * Set the player.
++     * @param players the player.
++     */
+     public void setPlayers(HashMap<String, Player> players) {
+         this.players = players;
+     }
+ 
++    /**
++     * Add the given player.
++     * @param player the given player.
++     * @throws TooMuchPlayersException
++     * @throws SamePlayerNameException
++     * @throws EmptyPlayerNameException
++     */
+     public void addPlayer(Player player) throws TooMuchPlayersException, SamePlayerNameException, EmptyPlayerNameException{
+         if(players.size() >= playersNumberLimit) {
+             throw new TooMuchPlayersException();
+@@ -72,7 +128,10 @@
+         else players.put(player.getName(), player);
+     }
+ 
+-    // Return the player creates highest attack.
++    /**
++     * Return the player creates highest attack.
++     * @return a player with highest total attack.
++     */
+     public Player findHighestAttackCreate(){
+         int highest = 0;
+         Player ret_player = new Player("NoPlayer", new Property(0, 0, 0,
+Index: phase1/app/src/main/java/com/example/phase1/WinActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- phase1/app/src/main/java/com/example/phase1/WinActivity.java	(revision c3d6505a93a1cac71cdb3e234c4bf6e8198bca22)
++++ phase1/app/src/main/java/com/example/phase1/WinActivity.java	(date 1572590311000)
+@@ -5,6 +5,7 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++/** Jump to this activity if the player win the game. */
+ public class WinActivity extends AppCompatActivity implements Initializable{
+ 
+     Phase1App app;
+Index: phase1/app/src/main/java/com/example/phase1/Initializable.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- phase1/app/src/main/java/com/example/phase1/Initializable.java	(revision c3d6505a93a1cac71cdb3e234c4bf6e8198bca22)
++++ phase1/app/src/main/java/com/example/phase1/Initializable.java	(date 1572590311000)
+@@ -1,5 +1,6 @@
+ package com.example.phase1;
+ 
+ public interface Initializable {
++    /** Initializable. */
+     public void init();
+ }

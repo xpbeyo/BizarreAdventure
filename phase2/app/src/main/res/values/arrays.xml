@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="careers">
+        <item>Computer Science</item>
+        <item>Life Science</item>
+        <item>Rotman Commerce</item>
+        <item>Engineer</item>
+    </string-array>
+
+    <string-array name="weapons">
+        <item>Pencil</item>
+        <item>Eraser</item>
+        <item>Calculator</item>
+        <item>CheatSheet</item>
+    </string-array>
+</resources>

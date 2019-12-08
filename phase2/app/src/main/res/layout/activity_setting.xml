@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".usersystem.views.app.SettingActivity"
+    android:background="?attr/backColor">
+
+    <LinearLayout
+        android:id="@+id/loginPanel"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/background_login_div" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="?attr/textColor"
+            android:layout_height="wrap_content"
+            android:text="Set Color"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <RadioButton
+            android:id="@+id/blue"
+            android:layout_width="wrap_content"
+            android:textColor="?attr/textColor"
+            android:layout_height="wrap_content"
+            android:text="Blue"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/yellow"
+            android:textColor="?attr/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yellow"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/pink"
+            android:textColor="?attr/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pink"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/green"
+            android:textColor="?attr/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Green"
+            android:textSize="15sp"
+            />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="back"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp"
+            />
+    </LinearLayout>
+</RelativeLayout>

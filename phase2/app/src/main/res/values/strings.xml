@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">phase2</string>
+    <string name="welcome">Welcome</string>
+    <string name="input_username">Please enter user name</string>
+    <string name="input_password">Please enter password</string>
+    <string name="PleaseLogin">Please login first</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <string name="PleaseRegister">Please register here</string>
+    <string name="input_password1">Please enter password</string>
+    <string name="input_password2">Please enter password again</string>
+    <string name="defence">Defence :</string>
+    <string name="your_gpa">Your GPA :</string>
+    <string name="attack">Attack</string>
+    <string name="flexibility">Flexibility</string>
+    <string name="luckiness">Luckiness</string>
+    <string name="Flexibility">Flexibility:</string>
+    <string name="Defence">Defence:</string>
+    <string name="Luckiness">Luckiness:</string>
+    <string name="Attack">Attack:</string>
+    <string name="Life">Life:</string>
+    <string name="monster_life">Monster Life:</string>
+    <string name="check_monster_move">Check Monster Move</string>
+    <string name="check">Check</string>
+    <string name="this_is_a_cute_monster">This is a cute monster.</string>
+    <string name="save_record">Do you want to save this record?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="scoreboard">ScoreBoard</string>
+</resources>
